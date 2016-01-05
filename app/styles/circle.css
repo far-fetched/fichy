@@ -1,0 +1,132 @@
+.circle {
+	transition: all 1s ease-in-out;
+}
+
+.circle.quarter-bottom-right{
+	position: absolute;
+	top: 250px;
+	left: 250px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 170, 170, 1);
+    border-radius: 0 0 200px 0;
+    -moz-border-radius: 0 0 200px 0;
+    -webkit-border-radius: 0 0 200px 0;
+}
+
+.circle.quarter-bottom-right.separete{
+	top: 280px;
+	left: 280px;
+}
+
+.circle.quarter-bottom-right div {
+    position: absolute;
+    width: 140px;
+    height: 120px;
+    top: 20px;
+    padding: 5px;
+}
+
+.circle.quarter-bottom-right div h3 {
+    color: white;
+}
+
+.circle.quarter-bottom-left{
+    border: 1px solid rgba(255, 170, 170, 1);
+    border-width: 1px 1px 1px 1px;
+	position: absolute;
+	top: 250px;
+	left: 50px;
+     width: 200px;
+     height: 200px;
+     background: #fff;
+     border-radius: 0 0 0 200px;
+     -moz-border-radius: 0 0 0 200px;
+     -webkit-border-radius: 0 0 0 200px;
+}
+
+.circle.quarter-bottom-left.separete{
+    top: 280px;
+    left: 20px;
+}
+
+.circle.quarter-bottom-left div {
+    position: absolute;
+    width: 140px;
+    height: 120px;
+    left: 60px;
+    top: 20px;
+    padding: 5px;
+}
+
+.circle.quarter-bottom-left div h3 {
+    color: rgba(255, 170, 170, 1);
+}
+
+.circle.quarter-top-right{
+    border: 1px solid rgba(255, 170, 170, 1);
+    border-width: 1px 1px 1px 1px;
+	top: 50px;
+	left: 250px;
+ 	 position: absolute;
+     width: 200px;
+     height: 200px;
+     background: #fff;
+     border-radius: 0 200px 0 0;
+     -moz-border-radius: 0 200px 0 0;
+     -webkit-border-radius: 0 200px 0 0;
+}
+
+.circle.quarter-top-right.separete{
+    top: 20px;
+    left: 280px;
+}
+
+.circle.quarter-top-right div {
+    position: absolute;
+    width: 140px;
+    height: 120px;
+    top: 60px;
+    padding: 5px;
+}
+
+.circle.quarter-top-right div h3 {
+    color: rgba(255, 170, 170, 1);
+}
+
+.circle.quarter-top-left{
+	top: 50px;
+	left: 50px;
+	position: absolute;
+     width: 200px;
+     height: 200px;
+     background: rgba(255, 170, 170, 1);
+     border-radius: 200px 0 0 0;
+     -moz-border-radius: 200px 0 0 0;
+     -webkit-border-radius: 200px 0 0 0;
+}
+
+.circle.quarter-top-left.separete{
+    top: 20px;
+    left: 20px;
+}
+
+.circle.quarter-top-left div {
+    position: absolute;
+    width: 140px;
+    height: 120px;
+    left: 60px;
+    top: 60px;
+    padding: 5px;
+}
+
+.circle.quarter-top-left div h3 {
+    color: white;
+}
+
+.back {
+	position: relative;
+	background: #fff;
+	width: 500px;
+	height: 500px;
+}

@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  
+  <div class="row">
+      <div class="col-md-12">
+                <ul class="ul-sub-nav">
+                  <div ng-repeat="template in templates" class="div-sub-nav" ng-class="{active:template.active}"><li ng-class="{active:template.active}" ng-click="changeTemplate(template)" ui-sref="{{template.url}}">{{template.name}}</li
+                  ></div>
+                </ul> 
+      </div>
+  </div>
+  <div ui-view></div>
+    
+</div>

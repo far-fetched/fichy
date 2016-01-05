@@ -1,0 +1,64 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  
+
+    <div class="panel-body" key-press>
+
+      <div class="row">
+        <div class="col-md-12 in-content">
+        	
+          <input class="btn btn-danger" type="submit" value="check" ng-init="valSep=false" ng-click="valSep=!valSep">
+
+
+          <input class="btn btn-danger" type="submit" value="flip" ng-init="valFlip=false" ng-click="valFlip=!valFlip">
+      
+
+          <div class="back">
+
+    				<div class="circle quarter-top-left" ng-class="{'separete': valSep}">
+              <div ng-show="valSep" class="scale-fade">
+                <h3>synonyms:</h3>
+                keep, stronghold
+              </div>
+    				</div>
+    				<div class="circle quarter-top-right" ng-class="{'separete': valSep}">
+              <div ng-show="valSep" class="scale-fade">
+                <h3>meaning:</h3>
+                military building
+              </div>
+    				</div>
+    				<div class="circle quarter-bottom-left" ng-class="{'separete': valSep}">
+              <div ng-show="valSep" class="scale-fade">
+                <h3>example:</h3>
+                King Arthur sieges castle in the north
+              </div>
+    				</div>
+    				<div class="circle quarter-bottom-right" ng-class="{'separete': valSep}">
+              <div ng-show="valSep" class="scale-fade">
+                <h3>available in:</h3>
+                english, polski
+              </div>
+    				</div>
+
+            <div class="flippy">
+
+              <div class="flippy-front" ng-class="{'flipped': valFlip}">
+
+                <div>Zamek</div>
+              </div>
+
+              <div class="flippy-back" ng-class="{'flipped': valFlip}">
+                <div>Castle</div>
+
+              </div>
+
+            </div>
+
+			    </div>
+
+
+      </div>
+
+    </div>
+
+</div>

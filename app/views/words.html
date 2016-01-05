@@ -1,0 +1,135 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  
+
+    <div class="panel-body">
+
+      <div class="row">
+        <div class="col-md-12 in-content">
+          
+            Try to find existing words and make new pair, or create a new word...
+          
+        </div>
+      </div>
+    
+      <div class="row">
+
+        <div class="col-md-6">
+          <angucomplete-alt
+                placeholder="Search"
+                pause="500"
+                selected-object="selectedWordOne"
+                remote-url="https://wordsweb-dziadzior.rhcloud.com/phrases"
+                remote-url-request-formatter="remoteUrlRequestFn"
+                title-field="content"
+                minlength="1"
+                input-class="form-control form-control-small"
+                match-class="highlight"
+                ng-model="selectedWordOne.originalObject.content"/>
+        </div>
+
+        <div class="col-md-6">
+          <angucomplete-alt
+                placeholder="Search"
+                pause="500"
+                selected-object="selectedWordTwo"
+                remote-url="https://wordsweb-dziadzior.rhcloud.com/phrases"
+                remote-url-request-formatter="remoteUrlRequestFn"
+                title-field="content"
+                minlength="1"
+                input-class="form-control form-control-small"
+                match-class="highlight"/>
+        </div>
+
+      </div>
+      
+
+      <form class="form-inline" ng-submit="addWord()" name="form">
+        <div class="row">
+
+          <div class="col-md-6">        
+          
+                <div class="form-group">
+                  <select class="form-control" ng-model="chosenLanguage">
+                    <option value="">---select language---</option>
+                    <option value="{{language.id}}" ng-repeat="language in languages">{{language.name}}</option>
+                  </select>
+                </div>   
+          </div>
+
+          <div class="col-md-6">        
+          
+                <div class="form-group">
+                  <select class="form-control" ng-model="chosenLanguage">
+                    <option value="">---select language---</option>
+                    <option value="{{language.id}}" ng-repeat="language in languages">{{language.name}}</option>
+                  </select>
+                </div>   
+          </div>
+
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" class="form-control" name="description" placeholder="desctiption (optional)" ng-model="newWord.description">
+          </div>  
+
+          <div class="col-md-6">
+            <input type="text" class="form-control" name="description" placeholder="desctiption (optional)" ng-model="newWord.description">
+          </div>  
+        </div>  
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="row" ng-repeat="example in examplesOne track by $index">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="example" placeholder="example #{{$index+1}}" ng-model="example.content">
+              </div>
+            </div>
+            <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="addExample(true)">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="col-md-6">
+            <div class="row" ng-repeat="example in examplesTwo track by $index">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="example" placeholder="example #{{$index+1}}" ng-model="example.content">
+              </div>
+            </div>
+            <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="addExample(false)">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            
+
+          </div>
+
+        </div>
+        
+      </form>
+
+
+      <div class="row in-content">
+        <div class="col-md-6">
+          Chosen 1#: <div class="rose">{{selectedWordOne.originalObject.content}}</div>
+
+        </div>
+        <div class="col-md-6">
+          Chosen 2#: <div class="rose">{{selectedWordTwo.originalObject.content}}</div>
+
+        </div>
+      </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <input class="btn btn-danger" type="submit" value="Add pair" ng-disabled="form.word.$error.required || dataLoading"> 
+          </div>
+        </div>
+
+    </div>
+
+
+</div>

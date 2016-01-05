@@ -1,0 +1,273 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  background: #f2f2f2;
+  font-family: proxima-nova-soft;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 0px solid #e5e5e5;
+  margin-bottom: 0px;
+  background: #4A3A47;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+  color: rgba(255, 170, 170, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 14px;
+    background-color: #fff;
+    border-width: 0px;
+    border-radius: 0px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.bottom-line {
+  float: left; 
+  background: #b19bad;
+  padding-bottom: 3px;
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: #392d37;
+    background-color: #fff;
+    
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    font-family: sans-serif; 
+    /*font-family: Lucida Grande;*/
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(255, 170, 170, 1);
+    background-color: #b19bad;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(255, 170, 170, 1);
+    background-color: #b19bad;
+    /*#FFCD57*/
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #d46a6a;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #d46a6a;
+}
+#custom-bootstrap-menu.navbar-default 
+   .navbar-toggle .icon-bar {
+    background-color: #d46a6a;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #550000;
+}
+
+.panel-default {
+  border: 1px solid #dbdbdb;
+  background-color: white;
+  border-top: 0px;
+  -webkit-border-radius: 10px;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius: 10px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  height: 700px;
+}
+
+.highlight {
+  color: #ff0000;
+}
+
+hr {
+  border: 1px solid #dbdbdb;
+}
+
+.container.main-content {
+  background: white;
+  padding-top: 10px;
+  -moz-box-shadow:    inset 0 0 10px #777;
+  -webkit-box-shadow: inset 0 0 10px #777;
+  box-shadow:         0px 0 15px 2px #777;
+  height: 1000px;
+}
+
+.glyphicon-globe {
+  font-size: 24px;
+  color: rgba(255, 170, 170, 1);
+}
+
+h1 {
+  color: rgba(255, 170, 170, 1);
+  margin-top: 10px;
+}
+
+.ul-sub-nav {
+  list-style-type: none;
+  margin: 15px;
+  padding: 0;
+}
+
+.ul-sub-nav .div-sub-nav {
+  background-color: #dbdbdb;
+  display: inline-block;
+  height: 41px;
+}
+
+.ul-sub-nav .div-sub-nav.active {
+  background-color: rgba(255, 170, 170, 1);
+  height: 41px;
+}
+
+.ul-sub-nav li {
+  padding: 10px;
+  background-color: white;
+  color: #dbdbdb;
+}
+
+.ul-sub-nav li:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+.ul-sub-nav li.active {
+  padding-bottom: 9px;
+  color: rgba(255, 170, 170, 1);
+}
+
+.in-content {
+  padding: 15px;
+}
+
+.in-content-margin {
+  margin: 15px;
+}
+
+.inside-in-content {
+  margin: 5px;
+}
+
+.glyphicon-remove {
+  color: #a94442;
+}
+
+.glyphicon-ok {
+  color: #3c763d;
+}
+
+.require {
+  font-weight: normal;
+}
+
+.form-control {
+  margin-top: 5px;
+}
+
+.btn {
+  margin-top: 5px;
+}
+
+.container-head {right: 0; text-align: center;}
+
+.container-head .left, .container-head .center, .container-head .right { display: inline-block; }
+
+.container-head .left { float: left; }
+.container-head .center { margin: 0 auto; }
+.container-head .right { float: right; margin-top: 10px}
+.clear { clear: both; }
+
+.container-view {
+  position: absolute;
+  width: 100%;
+  padding-right: 30px;
+}
+
+.message {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.rose {
+  color: rgba(255, 170, 170, 1)
+}
