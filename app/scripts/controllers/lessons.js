@@ -18,12 +18,6 @@ angular.module('basicCtrls')
 
       };
 
-      $scope.message = {
-        msg: 'min 3 characters (only letters allowed)',
-        type: 'alert alert-info',
-        hide: true
-      };
-
       $scope.newLanguage = '';
       $scope.dataLoading = false;
 
@@ -41,37 +35,6 @@ angular.module('basicCtrls')
         $scope.template.active = false;
         $scope.template = which;
         $scope.template.active = true;
-      };
-
-      $scope.addLanguage = function() {
-
-        $scope.dataLoading = true;
-        $http({ method: 'POST', url: 'https://wordsweb-dziadzior.rhcloud.com/languages/' + $scope.newLanguage}).
-          success(function(data) {
-            $scope.newLanguage = '';
-            $scope.languages.push(data);
-            $scope.dataLoading = false;
-            $scope.message = {
-              msg: 'Correct! You added '+data.name+'.',
-              type: 'alert alert-success',
-              hide: false
-            };
-
-            $timeout(function(){
-                $scope.message = {
-                  hide: true
-                };
-            }, 3000);
-
-          }).
-          error(function() {
-            $scope.dataLoading = false;
-            $scope.message = {
-              msg: 'Something went wrong! Try again...',
-              type: 'alert alert-danger'
-            };
-          });
-
       };
 
       $scope.removeLanguage = function(language) {
@@ -126,7 +89,7 @@ angular.module('basicCtrls')
                 $http.put('https://wordsweb-dziadzior.rhcloud.com/languages', $filter('json')(objToSend)).
                   success(function() {
                     $scope.dataLoading = false;
-                    $scope.massage = 'correct!';
+                    $scope.message = 'correct!';
                     $scope.success = true;
                     $timeout(function() {
                       pop.close();
@@ -136,7 +99,7 @@ angular.module('basicCtrls')
                   }).
                   error(function() {
                     $scope.dataLoading = false;
-                    $scope.massage = 'error! Try again';
+                    $scope.message = 'error! Try again';
                     $scope.danger = true;
                     $timeout(function() {
                       pop.close();
@@ -150,6 +113,49 @@ angular.module('basicCtrls')
 
       };
 
+      $scope.openNewLanguage = function() {
+        var pop = ngDialog.open({ 
+          template: 'views/new-language.html',
+          scope: $scope,
+          controller: ['$scope', '$timeout', function($scope, $timeout) {
+
+            $scope.addLanguage = function() {
+
+              $scope.dataLoading = true;
+              $http({ method: 'POST', url: 'https://wordsweb-dziadzior.rhcloud.com/languages/' + $scope.newLanguage}).
+                success(function(data) {
+                  $scope.newLanguage = '';
+                  $scope.languages.push(data);
+                  $scope.dataLoading = false;
+                  $scope.message = {
+                    msg: 'Correct! You added '+data.name+'.',
+                    danger: false,
+                    success: true
+                  };
+
+                  $timeout(function() {
+                    pop.close();
+                  }, 2000); 
+
+                }).
+                error(function() {
+                  $scope.dataLoading = false;
+                  $scope.message = {
+                    msg: 'Something goes wrong! Try again...',
+                    danger: true,
+                    success: false
+                  };
+
+                  $timeout(function() {
+                    pop.close();
+                  }, 2000); 
+
+                });
+
+            };    
+
+          }]});
+      };
 
 
   }]);

@@ -45,7 +45,7 @@ angular
       .state('lessons.list', {
         url: '/list',
         templateUrl: 'views/lessons.html',
-        controller: 'LessonsCtrl'
+        controller: 'LessonsListCtrl'
       })
       .state('words', {
         url: '/words',
@@ -63,26 +63,6 @@ angular
         controller: 'LoginController'
       });
 
-/*
-    $routeProvider
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginController'
-      })
-      .when('/lessons', {
-        templateUrl: 'views/main-lessons.html',
-        controller: 'LessonsCtrl'
-      })
-      .when('/words', {
-        templateUrl: 'views/words.html',
-        controller: 'WordsCtrl'
-      })
-      .when('/', {
-        redirectTo: '/lessons'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });*/
   })
   
   .run(['$rootScope', '$location', '$cookieStore', '$http',

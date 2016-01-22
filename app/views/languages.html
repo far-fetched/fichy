@@ -1,31 +1,4 @@
   <!-- Table -->
-   <div class="row in-content">
-      <div class="col-md-12">
-        <form class="form-inline" ng-submit="addLanguage()" name="form">
-          <div class="form-group">
-            <label for="exampleInputName2">New:</label>
-            <input type="text" class="form-control" name="language" placeholder="Language" ng-model="newLanguage" required ng-minlength="3" ng-pattern="/^[a-zA-Z]*$/">
-          </div>
-        
-          <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="minimum 3 characters"></span>
-          <input class="btn btn-danger" type="submit" value="Add" ng-disabled="form.language.$error.minlength || dataLoading || form.language.$error.required || form.language.$error.pattern">
-
-          <img ng-if="dataLoading" src="images/loader.gif"/>
-        </form>
-        <div class="inside-in-content">
-          <span class="glyphicon" ng-class="{'glyphicon-ok': !form.language.$error.pattern, 'glyphicon-remove': form.language.$error.pattern}" aria-hidden="true"></span>
-          <label class="require">letters</label><br />
-          <span class="glyphicon" ng-class="{'glyphicon-remove': form.language.$error.minlength || form.language.$error.required, 'glyphicon-ok': !form.language.$error.minlength && !form.language.$error.required}" aria-hidden="true"></span>
-          <label class="require">3 min</label>
-            <div class="message"> 
-              <div class="scale-fade" ng-hide="message.hide" ng-class="message.type">{{message.msg}}</div>
-            </div>
-        </div>
-        
-      </div>
-   </div>
-    
-   
 
   <table class="table">
 
@@ -51,7 +24,10 @@
     </tr>
   </table>
 
-
-
+<div class="row">
+  <div class="col-md-1 col-md-offset-4">
+    <input class="btn btn-danger" type="submit" value="New Language !" ng-click="openNewLanguage()" ng-disabled="dataLoading">
+  </div>  
+</div>
 
 

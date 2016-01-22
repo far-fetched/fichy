@@ -264,10 +264,13 @@ h1 {
 
 .message {
   position: absolute;
-  top: 50px;
-  left: 100px;
+
 }
 
 .rose {
   color: rgba(255, 170, 170, 1)
+}
+
+.top-margin {
+  margin-top: 5px;
 }
