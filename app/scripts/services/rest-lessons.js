@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('apiService')
+angular.module('restApi')
 
-.factory('Lessons', ['$resource', function ($resource) {
+.factory('RestLessons', ['$resource', function ($resource) {
     return $resource('https://wordsweb-dziadzior.rhcloud.com/lists/:id', 
     				{id: '@id'});
 }]);

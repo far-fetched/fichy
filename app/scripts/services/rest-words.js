@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('apiService')
+angular.module('restApi')
 
-.factory('Words', ['$resource', function ($resource) {
+.factory('RestWords', ['$resource', function ($resource) {
     return $resource('https://wordsweb-dziadzior.rhcloud.com/phrases/:id', 
     				{id: '@id'}, 
     				{'myDelete':  {method:'DELETE'}

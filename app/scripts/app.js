@@ -9,19 +9,26 @@
  * Main module of the application.
  */
 
-angular.module('basicCtrls', ['apiService', 'ngDialog', 'angucomplete-alt', 'myDirectives']);
-angular.module('apiService', ['ngResource']);
+
+angular.module('lessonsModule', ['ngDialog', 'restApi', 'ui.bootstrap']);
+angular.module('wordsModule', ['restApi', 'angucomplete-alt']);
+angular.module('learnModule', []);
+angular.module('navBarCtrl', []);
+angular.module('restApi', ['ngResource']);
 angular.module('authentication', ['base64']);
 angular.module('myDirectives', []);
+
 
 angular
   .module('wordsWebFrontendApp', [
     'ngCookies',
-    'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'basicCtrls',
+    'lessonsModule',
+    'wordsModule',
+    'learnModule',
+    'navBarCtrl',
     'authentication',
     'ui.router', 
     'anim-in-out'
@@ -34,27 +41,27 @@ angular
     $stateProvider
       .state('lessons', {
         url: '/lessons',
-        templateUrl: 'views/main-lessons.html',
-        controller: 'LessonsCtrl'
+        templateUrl: 'views/lessons/main-lessons.html',
+        controller: 'LessonsNavBarCtrl'
       })
       .state('lessons.languages', {
         url: '/languages',
-        templateUrl: 'views/languages.html',
-        controller: 'LessonsCtrl'
+        templateUrl: 'views/lessons/languages.html',
+        controller: 'LanguagesCtrl'
       })
-      .state('lessons.list', {
-        url: '/list',
-        templateUrl: 'views/lessons.html',
-        controller: 'LessonsListCtrl'
+      .state('lessons.lessons', {
+        url: '/lessons',
+        templateUrl: 'views/lessons/lessons.html',
+        controller: 'LessonsCtrl'
       })
       .state('words', {
         url: '/words',
-        templateUrl: 'views/words.html',
+        templateUrl: 'views/words/words.html',
         controller: 'WordsCtrl'
       })
       .state('learn', {
         url: '/learn',
-        templateUrl: 'views/learn.html',
+        templateUrl: 'views/learn/learn.html',
         controller: 'LearnCtrl'
       })
       .state('login', {
@@ -65,6 +72,8 @@ angular
 
   })
   
+
+
   .run(['$rootScope', '$location', '$cookieStore', '$http',
     function ($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh

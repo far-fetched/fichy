@@ -1,11 +1,11 @@
 'use strict';
 
 
-angular.module('basicCtrls')
-	.controller('WordsCtrl', ['$scope', 'Words', 'Posts', function($scope, Words, Posts) {
+angular.module('wordsModule')
+	.controller('WordsCtrl', ['$scope', 'RestWords', 'RestLanguages', function($scope, RestWords, RestLanguages) {
 
 		$scope.dataLoading = false;
-		$scope.languages = Posts.query();
+		$scope.languages = RestLanguages.query();
 		$scope.examplesOne = [{id: 0, content: ''}];
 		$scope.examplesTwo = [{id: 0, content: ''}];
 
@@ -56,7 +56,7 @@ angular.module('basicCtrls')
 		$scope.removeWord = function(idWord) {
 	       
 	       	$scope.dataLoading = true;
-	        Words.myDelete({id: idWord}, function() {
+	        RestWords.myDelete({id: idWord}, function() {
 	        	$scope.dataLoading = false;
 	        	$scope.$broadcast('angucomplete-alt:clearInput');
 	        }, function() {

@@ -1,0 +1,33 @@
+<h1>Edit:</h1>
+<div class="row">
+	<div class="col-md-12">
+		<div ng-hide="message">
+			<form class="form-inline" name="form">
+				  <div class="form-group">
+				    <input type="text" class="form-control" name="language" ng-model="toEdit" required ng-minlength="3" ng-pattern="/^[a-zA-Z]*$/">
+				  </div>
+				  
+			</form>
+
+	        <div class="row top-margin">
+
+	          <div class="col-md-6">
+	          <span class="glyphicon" ng-class="{'glyphicon-ok': !form.language.$error.pattern, 'glyphicon-remove': form.language.$error.pattern}" aria-hidden="true"></span>
+	          <label class="require">only letters</label><br />
+	          <span class="glyphicon" ng-class="{'glyphicon-remove': form.language.$error.minlength || form.language.$error.required, 'glyphicon-ok': !form.language.$error.minlength && !form.language.$error.required}" aria-hidden="true"></span>
+	          <label class="require">3 min</label>
+	          </div>
+	            
+	        </div>
+
+			<input class="btn btn-danger" ng-click="sendEdited()" value="Edit" ng-disabled="form.language.$error.minlength || dataLoading || form.language.$error.required || form.language.$error.pattern">
+
+			<img ng-if="dataLoading" src="images/loader_pop.gif"/>
+
+		</div>
+
+		<div ng-show="message" class="alert" ng-class="{ 'alert-danger': message.danger, 'alert-success': message.success }">{{message.msg}}</div>
+
+
+	</div>
+</div>

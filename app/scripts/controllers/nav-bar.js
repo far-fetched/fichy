@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('basicCtrls')
+angular.module('navBarCtrl')
 	.controller('ActiveNavBarCtrl', ['$scope', '$location', function($scope, $location) {
 		$scope.isActive = function (viewLocation) { 
         	
